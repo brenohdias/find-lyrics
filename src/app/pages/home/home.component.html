@@ -1,0 +1,42 @@
+<div class="main">
+
+  <h1>BUSCAR LETRAS</h1>
+
+  <div class="inputs">
+    <label>Artista:</label>
+    <input [value]="artist" name="artist" [(ngModel)]="artist">
+  </div>
+
+  <div class="inputs">
+    <label>Música:</label>
+    <input [value]="music" name="music" [(ngModel)]="music">
+  </div>
+
+  <div class="button">
+    <button (click)="findLyrics()">BUSCAR</button>
+  </div>
+
+  <div class="button">
+    <button [disabled]="enableButton" (click)="translate()">TRADUZIR</button>
+  </div>
+
+</div>
+
+<body>
+  <div class="main">
+  <div>
+    <h1>{{titleMusic}}</h1>
+    <h3>{{artistMusic}}</h3>
+  </div>
+
+  <div>
+    <a href={{link}}><img class={{invisible}} src={{img}}></a>
+  </div>
+
+
+  <div class="lyrics">
+    <pre class="lyrics2">{{lyricMusic}}</pre>
+    <pre>{{translatedMusic2}}</pre>
+  </div>
+</div>
+</body>
