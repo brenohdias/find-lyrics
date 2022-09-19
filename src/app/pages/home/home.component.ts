@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   img: string= '';
   invisible: string= 'invible';
   link: string='';
+  textLink: string= '';
 
 
   constructor(private homeService: HomeService) { }
@@ -38,18 +39,24 @@ export class HomeComponent implements OnInit {
           this.artistMusicImg = "";
           this.invisible="invisible";
           this.enableButton = true;
+          this.textLink="";
         }
-        else{
-        console.log('Sucesso' ,result)
-        this.lyricMusic = result.mus[0].text;
-        this.titleMusic = result.mus[0].name;
-        this.artistMusic = result.art.name;
-        this.artistMusicImg = result.art.id;
-        this.translatedMusic2 = "";
-        this.invisible="img";
-        this.link= result.art.url;
-        this.bringImage();
-      }
+        if(result.art){
+          console.log('Sucesso' ,result)
+          this.artistMusic = result.art.name;
+          this.artistMusicImg = result.art.id;
+          this.titleMusic = "Não foi possível encontrar essa música"
+          this.translatedMusic2 = "";
+          this.invisible="img";
+          this.link= result.art.url;
+          this.bringImage();
+          this.textLink="Conheça outras músicas de " + this.artistMusic;
+          if(result.mus){
+            this.lyricMusic = result.mus[0].text;
+            this.titleMusic = result.mus[0].name;
+            this.translatedMusic2 = "";
+          }
+        }
 
       if(result.mus[0].translate){
         this.translatedMusic = result.mus[0].translate[0].text;

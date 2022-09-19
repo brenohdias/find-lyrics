@@ -13,7 +13,7 @@
   </div>
 
   <div class="button">
-    <button (click)="findLyrics()">BUSCAR</button>
+    <button [disabled]="!artist" (click)="findLyrics()">BUSCAR</button>
   </div>
 
   <div class="button">
@@ -25,14 +25,20 @@
 <body>
   <div class="main">
   <div>
-    <h1>{{titleMusic}}</h1>
     <h3>{{artistMusic}}</h3>
   </div>
 
   <div>
-    <a href={{link}}><img class={{invisible}} src={{img}}></a>
+    <img class={{invisible}} src={{img}}>
   </div>
 
+  <div>
+    <a href={{link}}>{{textLink}}</a>
+  </div>
+
+  <div>
+    <h2>{{titleMusic}}</h2>
+  </div>
 
   <div class="lyrics">
     <pre class="lyrics2">{{lyricMusic}}</pre>
