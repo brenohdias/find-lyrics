@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
   link: string='';
   textLink: string= '';
 
-
   constructor(private homeService: HomeService) { }
 
   ngOnInit() {
@@ -45,7 +44,11 @@ export class HomeComponent implements OnInit {
           console.log('Sucesso' ,result)
           this.artistMusic = result.art.name;
           this.artistMusicImg = result.art.id;
-          this.titleMusic = "Não foi possível encontrar essa música"
+          if(this.music!=""){
+            this.titleMusic = "Não foi possível encontrar '" + this.music + "' de " + this.artistMusic;
+          }else{
+            this.titleMusic = "Não foi encontrada nenhuma música";
+          }
           this.translatedMusic2 = "";
           this.invisible="img";
           this.link= result.art.url;
