@@ -1,44 +1,55 @@
 <div class="main">
 
-  <h1>BUSCAR LETRAS</h1>
+  <h1 class="haha">BUSCAR LETRAS</h1>
 
   <div class="inputs">
-    <label>Artista:</label>
-    <input [value]="artist" name="artist" [(ngModel)]="artist">
-  </div>
+    <form class="form-floating input">
+      <input type="text" class="form-control" id="floatingInputValue" [value]="artist" name="artist" [(ngModel)]="artist">
+      <label for="floatingInputValue">Artista:</label>
+    </form>
 
-  <div class="inputs">
-    <label>Música:</label>
-    <input [value]="music" name="music" [(ngModel)]="music">
-  </div>
+    <form class="form-floating input">
+      <input type="text" class="form-control" id="floatingInputValue" [value]="music" name="music" [(ngModel)]="music">
+      <label for="floatingInputValue">Música:</label>
+    </form>
 
-  <div class="button">
-    <button [disabled]="!artist" (click)="findLyrics()">BUSCAR</button>
-  </div>
+    <div class="button">
+      <button [disabled]="!artist" (click)="findLyrics()" type="button" class="btn btn-primary b button2">BUSCAR</button>
+      <button [disabled]="enableButton"(click)="translate()" type="button" class="btn btn-primary b button2">TRADUZIR</button>
+    </div>
 
-  <div class="button">
-    <button [disabled]="enableButton" (click)="translate()">TRADUZIR</button>
   </div>
-
 </div>
 
 <body>
   <div class="main">
-  <div>
-    <h3>{{artistMusic}}</h3>
-  </div>
 
-  <div>
+  <div class="artist">
     <img class={{invisible}} src={{img}}>
+    <div clas="artist2">
+      <a href={{link}}>
+        <h3>{{artistMusic}}</h3>
+      </a>
+      <p>{{titleMusic}}</p>
+      <p>
+        <a [href]="linkCifra">{{textCifra}}</a>
+      </p>
+    </div>
   </div>
 
-  <div>
+  <div class="artist3">
     <a href={{link}}>{{textLink}}</a>
   </div>
 
-  <div>
+  <!-- <div>
     <h3>{{titleMusic}}</h3>
   </div>
+
+  <div>
+    <p>
+      <a [href]="linkCifra">{{textCifra}}</a>
+    </p>
+  </div> -->
 
   <div class="lyrics">
     <pre class="lyrics2">{{lyricMusic}}</pre>

@@ -18,9 +18,12 @@ export class HomeComponent implements OnInit {
   enableButton: boolean= true;
   artistMusicImg: string= '';
   img: string= '';
-  invisible: string= 'invible';
+  invisible: string= 'invisible';
   link: string='';
   textLink: string= '';
+  linkCifra: string='';
+  textCifra: string='';
+  visibleArtist: string='invisible';
 
   constructor(private homeService: HomeService) { }
 
@@ -39,11 +42,15 @@ export class HomeComponent implements OnInit {
           this.invisible="invisible";
           this.enableButton = true;
           this.textLink="";
+          this.textCifra="";
         }
         if(result.art){
           console.log('Sucesso' ,result)
           this.artistMusic = result.art.name;
           this.artistMusicImg = result.art.id;
+          this.visibleArtist= "artist";
+          this.textCifra="";
+
           if(this.music!=""){
             this.titleMusic = "Não foi possível encontrar '" + this.music + "' de " + this.artistMusic;
           }else{
@@ -54,15 +61,21 @@ export class HomeComponent implements OnInit {
           this.link= result.art.url;
           this.bringImage();
           this.textLink="Conheça outras músicas de " + this.artistMusic;
+          this.textCifra="";
           if(result.mus){
+            var art;
+            var msc;
             this.lyricMusic = result.mus[0].text;
             this.titleMusic = result.mus[0].name;
             this.translatedMusic2 = "";
+            this.linkCifra = "https://www.cifraclub.com.br/" + result.mus[0].url.split('br')[1].split('.')[0];
+            console.log(this.linkCifra);
+            this.textCifra="Cifra";
           }
         }
 
-      if(result.mus[0].translate){
-        this.translatedMusic = result.mus[0].translate[0].text;
+      if(result.type != "song_notfound"){
+        this.translatedMusic = result.mus[0]?.translate[0].text;
         this.enableButton = false;
       }
       else{

@@ -3,13 +3,29 @@
   justify-content: space-around;
 }
 
+.haha{
+  text-align: center;
+}
+
+.input{
+  width: 150px;
+}
+
 .inputs{
-  display: inline-grid;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .button{
-  display: inline-grid;
-  margin-top: 16px;
+  display: grid;
+}
+
+.button2{
+  margin-left: 5px;
+  height: 27px;
+  font-size: 14px;
+  padding-top: 3px;
 }
 
 .lyrics{
@@ -21,11 +37,27 @@
 }
 
 .img{
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
 }
 
 .invisible{
   display: none;
 }
 
+.artist{
+  height: 100%;
+  width: 400px;
+  background-color: red;
+  display: flex;
+}
+
+.artist2{
+  padding-top: 50px;
+}
+
+.artist3{
+  display: flex;
+  justify-content: space-around;
+}
