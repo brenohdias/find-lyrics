@@ -23,37 +23,32 @@
 
 <body>
   <div class="main">
+    <div *ngIf="artistMusic" class="artist">
+      <img class={{invisible}} src={{img}}>
+      <div clas="artist2">
+        <h4 class="textMusic"><b>{{titleMusic}}</b></h4>
+        <div class="links">
 
-  <div class="artist">
-    <img class={{invisible}} src={{img}}>
-    <div clas="artist2">
-      <a href={{link}}>
-        <h3>{{artistMusic}}</h3>
-      </a>
-      <p>{{titleMusic}}</p>
-      <p>
-        <a [href]="linkCifra">{{textCifra}}</a>
-      </p>
+            <p><a id="artist" class="textArtist" href={{link}}>{{artistMusic}}</a></p>
+
+            <p><a id="artist" class="textArtist" href={{linkCifra}}>{{textCifra}}</a></p>
+
+        </div>
+
+      </div>
     </div>
   </div>
 
-  <div class="artist3">
-    <a href={{link}}>{{textLink}}</a>
-  </div>
 
-  <!-- <div>
-    <h3>{{titleMusic}}</h3>
+  <div class="main">
+  <div *ngIf="!artistMusic" class="artist3">
+      <h3>{{titleMusic}}</h3>
   </div>
-
-  <div>
-    <p>
-      <a [href]="linkCifra">{{textCifra}}</a>
-    </p>
-  </div> -->
 
   <div class="lyrics">
-    <pre class="lyrics2">{{lyricMusic}}</pre>
-    <pre>{{translatedMusic2}}</pre>
+    <pre class="lyrics2"><b>{{lyricMusic}}</b></pre>
+    <pre><b>{{translatedMusic2}}</b></pre>
   </div>
 </div>
+
 </body>

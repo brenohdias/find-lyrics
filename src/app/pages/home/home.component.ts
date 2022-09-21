@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     this.homeService.getMusic(this.artist, this.music).subscribe(
       (result: any) => {
         if(result.type == 'notfound' || result.type == 'song_notfound'){
-          this.titleMusic = "Não foi possível encontrar resultado"
+          this.titleMusic = "Não foi possível encontrar resultado";
           this.lyricMusic = "";
           this.artistMusic = "";
           this.translatedMusic2 = "";
@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
           if(this.music!=""){
             this.titleMusic = "Não foi possível encontrar '" + this.music + "' de " + this.artistMusic;
           }else{
-            this.titleMusic = "Não foi encontrada nenhuma música";
+            this.titleMusic = "Nenhuma música encontrrada";
           }
           this.translatedMusic2 = "";
           this.invisible="img";
@@ -63,8 +63,6 @@ export class HomeComponent implements OnInit {
           this.textLink="Conheça outras músicas de " + this.artistMusic;
           this.textCifra="";
           if(result.mus){
-            var art;
-            var msc;
             this.lyricMusic = result.mus[0].text;
             this.titleMusic = result.mus[0].name;
             this.translatedMusic2 = "";
@@ -88,6 +86,7 @@ export class HomeComponent implements OnInit {
       },
     )
   }
+
   translate(){
     if(this.translatedMusic2 == this.translatedMusic){
       this.translatedMusic2 = "";
