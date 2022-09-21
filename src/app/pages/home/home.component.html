@@ -1,6 +1,6 @@
 <div class="fundo">
   <div class="main">
-    <h1 class="haha">BUSCAR LETRAS</h1>
+    <h1 class="haha"><b>BUSCAR LETRAS</b></h1>
 
     <div class="inputs">
       <form class="form-floating input">
@@ -21,7 +21,7 @@
 
     <div class="main">
       <div *ngIf="!artistMusic" class="artist3">
-          <h3>{{titleMusic}}</h3>
+          <h3><b>{{titleMusic}}</b></h3>
       </div>
       </div>
 
@@ -42,7 +42,7 @@
 </div>
 
 <body>
-  <div class="main2">
+  <div *ngIf="lyricMusic" class="main2">
     <div class="lyrics">
       <pre class="lyrics2"><b>{{lyricMusic}}</b></pre>
       <pre><b>{{translatedMusic2}}</b></pre>
