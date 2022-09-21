@@ -54,20 +54,20 @@ export class HomeComponent implements OnInit {
           if(this.music!=""){
             this.titleMusic = "Não foi possível encontrar '" + this.music + "' de " + this.artistMusic;
           }else{
-            this.titleMusic = "Nenhuma música encontrrada";
+            this.titleMusic = "Nenhuma música encontrada";
           }
           this.translatedMusic2 = "";
           this.invisible="img";
           this.link= result.art.url;
           this.bringImage();
-          this.textLink="Conheça outras músicas de " + this.artistMusic;
+          // this.textLink="Conheça outras músicas de " + this.artistMusic;
           this.textCifra="";
           if(result.mus){
             this.lyricMusic = result.mus[0].text;
             this.titleMusic = result.mus[0].name;
             this.translatedMusic2 = "";
             this.linkCifra = "https://www.cifraclub.com.br/" + result.mus[0].url.split('br')[1].split('.')[0];
-            console.log(this.linkCifra);
+            // console.log(this.linkCifra);
             this.textCifra="Cifra";
           }
         }

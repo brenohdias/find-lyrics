@@ -1,54 +1,52 @@
-<div class="main">
+<div class="fundo">
+  <div class="main">
+    <h1 class="haha">BUSCAR LETRAS</h1>
 
-  <h1 class="haha">BUSCAR LETRAS</h1>
+    <div class="inputs">
+      <form class="form-floating input">
+        <input type="text" class="form-control" id="floatingInputValue" [value]="artist" name="artist" [(ngModel)]="artist">
+        <label for="floatingInputValue">Artista:</label>
+      </form>
 
-  <div class="inputs">
-    <form class="form-floating input">
-      <input type="text" class="form-control" id="floatingInputValue" [value]="artist" name="artist" [(ngModel)]="artist">
-      <label for="floatingInputValue">Artista:</label>
-    </form>
+      <form class="form-floating input">
+        <input type="text" class="form-control" id="floatingInputValue" [value]="music" name="music" [(ngModel)]="music">
+        <label for="floatingInputValue">Música:</label>
+      </form>
 
-    <form class="form-floating input">
-      <input type="text" class="form-control" id="floatingInputValue" [value]="music" name="music" [(ngModel)]="music">
-      <label for="floatingInputValue">Música:</label>
-    </form>
-
-    <div class="button">
-      <button [disabled]="!artist" (click)="findLyrics()" type="button" class="btn btn-primary b button2">BUSCAR</button>
-      <button [disabled]="enableButton"(click)="translate()" type="button" class="btn btn-primary b button2">TRADUZIR</button>
+      <div class="button">
+        <button [disabled]="!artist" (click)="findLyrics()" type="button" class="btn btn-primary b button2">BUSCAR</button>
+        <button [disabled]="enableButton"(click)="translate()" type="button" class="btn btn-primary b button2">TRADUZIR</button>
+      </div>
     </div>
 
-  </div>
-</div>
+    <div class="main">
+      <div *ngIf="!artistMusic" class="artist3">
+          <h3>{{titleMusic}}</h3>
+      </div>
+      </div>
 
-<body>
+  </div>
+
   <div class="main">
     <div *ngIf="artistMusic" class="artist">
       <img class={{invisible}} src={{img}}>
       <div clas="artist2">
         <h4 class="textMusic"><b>{{titleMusic}}</b></h4>
         <div class="links">
-
             <p><a id="artist" class="textArtist" href={{link}}>{{artistMusic}}</a></p>
-
             <p><a id="artist" class="textArtist" href={{linkCifra}}>{{textCifra}}</a></p>
-
         </div>
-
       </div>
     </div>
   </div>
-
-
-  <div class="main">
-  <div *ngIf="!artistMusic" class="artist3">
-      <h3>{{titleMusic}}</h3>
-  </div>
-
-  <div class="lyrics">
-    <pre class="lyrics2"><b>{{lyricMusic}}</b></pre>
-    <pre><b>{{translatedMusic2}}</b></pre>
-  </div>
 </div>
+
+<body>
+  <div class="main2">
+    <div class="lyrics">
+      <pre class="lyrics2"><b>{{lyricMusic}}</b></pre>
+      <pre><b>{{translatedMusic2}}</b></pre>
+    </div>
+  </div>
 
 </body>
