@@ -29,7 +29,7 @@
 
   <div class="main">
     <div *ngIf="artistMusic" class="artist">
-      <img class={{invisible}} src={{img}}>
+      <img [class]="invisible" [src]="img">
       <div clas="artist2">
         <h4 class="textMusic"><b>{{titleMusic}}</b></h4>
         <div class="links">
@@ -39,6 +39,9 @@
       </div>
     </div>
   </div>
+</div>
+<div *ngIf="!lyricMusic" class="background">
+
 </div>
 
 <body>

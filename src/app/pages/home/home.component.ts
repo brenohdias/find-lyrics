@@ -97,7 +97,7 @@ export class HomeComponent implements OnInit {
   }
 
   bringImage(){
-    var artist = this.artistMusicImg;
+    let artist = this.artistMusicImg;
 
     this.homeService.getImg(artist).subscribe(
           (img: any) => {
